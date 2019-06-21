@@ -145,3 +145,30 @@ management:
       exposure:
         include: health, refresh
 ```
+
+## Logging Level Changing
+
+Along with the configuration properties we are able to change logging level same way.
+See [https://github.com/dmitry-at-hyla/hyla-spring-cloud-bus-test/blob/master/app/src/main/kotlin/com/hylamobile/springcloudbus/app/web/AppController.kt](AppController.kt).
+
+You can see that logging level for `com.hylamobile` is defined as `info` in `configserver/config/application.yml` file:
+
+```yaml
+logging:
+  level:
+    com.hylamobile: info
+```
+
+When we call `/test` endpoint, we can see that the application prints info message but not debug message:
+
+```
+... c.h.s.app.web.AppController              : AppController::infoMessage
+```
+
+Now change the value to `debug`, and call `monitor`, you can see that debug message started printing:
+
+```
+... c.h.s.app.web.AppController              : AppController::debugMessage
+... c.h.s.app.web.AppController              : AppController::infoMessage
+```
+
