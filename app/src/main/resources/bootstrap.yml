@@ -2,6 +2,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888/
+  application:
+    name: testapp
 app:
   message: Embedded message
 

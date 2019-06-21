@@ -107,6 +107,40 @@ $ curl http://localhost:8080/test
 Note: we do not need to call all the applications in order to let them know about changes.
 The only thing that should be called is ConfigServer.
 
+Assume that we have two different application running: first is our "testapp",
+second is "superapp". The names are the same as we define them in `spring.application.name`
+property. In that case we could perform fine-grained update based on the name of the application.
+If we set `path` parameter to the name of application, only the instances of this application
+will be updated.
+
+Test it: change the version of the `app.message` to 3. And call
+
+```bash
+$ curl -XPOST http://localhost:8888/monitor -d 'path=superapp'
+["superapp"]
+```
+
+Check the message value:
+
+```bash
+$ curl http://localhost:8080/test
+{"message":"Message from ConfigServer (version 2)"}
+```
+
+Now call the `/monitor` with `testapp` path:
+
+```bash
+$ curl -XPOST http://localhost:8888/monitor -d 'path=testapp'
+["testapp"]
+```
+
+And now the message returns updated version:
+
+```bash
+$ curl http://localhost:8080/test
+{"message":"Message from ConfigServer (version 3)"}
+```
+
 ## The Implementation
 
 The project consists of two sub-projects: application and the config-server itself.
