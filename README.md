@@ -47,7 +47,8 @@ cd app
 
 ### Running the Example
 
-Set the proper values for the rabbitmq properties in `configserver/src/main/resources/bootstrap.yml' file.
+Set the proper values for the rabbitmq properties in
+[`configserver/src/main/resources/bootstrap.yml`](https://github.com/dmitry-at-hyla/hyla-spring-cloud-bus-test/blob/master/configserver/src/main/resources/bootstrap.yml) file.
 E.g. these values are defined by default:
 
 ```yaml
@@ -84,7 +85,7 @@ $ curl http://localhost:8080/test
 
 You see that the message returning from the application has version 1.
 
-Now open the `configserver/config/application.yml` file and change the version to 2.
+Now open the [`configserver/config/application.yml`](https://github.com/dmitry-at-hyla/hyla-spring-cloud-bus-test/blob/master/configserver/config/application.yml) file and change the version to 2.
 First let the config-server know about this change:
 
 ```bash
@@ -107,7 +108,7 @@ The only thing that should be called is ConfigServer.
 ## The Implementation
 
 The project consists of two sub-projects: application and the config-server itself.
-The config-server reads the configuration from the `config/application.yml` file.
+The config-server reads the configuration from the [`config/application.yml`](https://github.com/dmitry-at-hyla/hyla-spring-cloud-bus-test/blob/master/configserver/config/application.yml) file.
 This file contains the only application setting: `app.message`.
 
 After the application starts, it requests the configuration from the config-server.
@@ -149,9 +150,9 @@ management:
 ## Logging Level Changing
 
 Along with the configuration properties we are able to change logging level same way.
-See [https://github.com/dmitry-at-hyla/hyla-spring-cloud-bus-test/blob/master/app/src/main/kotlin/com/hylamobile/springcloudbus/app/web/AppController.kt](AppController.kt).
+See [AppController.kt](https://github.com/dmitry-at-hyla/hyla-spring-cloud-bus-test/blob/master/app/src/main/kotlin/com/hylamobile/springcloudbus/app/web/AppController.kt)
 
-You can see that logging level for `com.hylamobile` is defined as `info` in `configserver/config/application.yml` file:
+[You can see](https://github.com/dmitry-at-hyla/hyla-spring-cloud-bus-test/blob/master/configserver/config/application.yml) that logging level for `com.hylamobile` is defined as `info` in `configserver/config/application.yml` file:
 
 ```yaml
 logging:
