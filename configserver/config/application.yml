@@ -1,0 +1,8 @@
+app:
+  message: Message from ConfigServer (version 1)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, refresh
