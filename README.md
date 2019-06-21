@@ -7,6 +7,8 @@ If the properties are changed on the ConfigServer, we need to restart the applic
 up the latest values. The purpose of this project is to demonstrate how to pick up configuration properties
 on the applications automatically.
 
+Apart from that automatic logging level changing is also considered.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
