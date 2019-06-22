@@ -23,7 +23,7 @@ In order to build and run this example, you need following application installed
 
 RabbitMQ should be running.
 
-### Installating
+### Installing
 
 Clone the project to your local laptop:
 
