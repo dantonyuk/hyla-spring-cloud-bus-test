@@ -9,6 +9,14 @@ on the applications automatically.
 
 Apart from that automatic logging level changing is also considered.
 
+  * [Getting Started](#getting-started)
+    * [Prerequisites](#prerequisites)
+    * [Installing](#installing)
+    * [Running the Example](#running-the-example)
+  * [How to Test](#how-to-test)
+  * [The Implementation](#the-implementation)
+  * [Logging Level Changing](#logging-level-changing)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
